@@ -1,0 +1,3 @@
+OndaViruset|virus|99|true
+The Virus|virus|28|false
+Tropical|virus|23|true

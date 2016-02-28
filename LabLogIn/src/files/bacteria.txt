@@ -1,0 +1,3 @@
+NastyStuff|bacteria|12|true
+Sneesy|bacteria|1|false
+Vomito|bacteria|3|false

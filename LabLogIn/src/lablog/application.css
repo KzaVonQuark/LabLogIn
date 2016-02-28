@@ -1,0 +1,4 @@
+#messageButton:hover {
+	-fx-fill: red;
+	-fx-background-color: red;
+}

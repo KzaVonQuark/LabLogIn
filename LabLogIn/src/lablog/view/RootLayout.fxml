@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="680.0" maxWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lablog.view.LogInController">
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1280.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#emergencyPrintOut" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: red;" text="Emergency Print" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="60.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="logOut" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="40.0" prefWidth="100.0" text="Log out">
+               <HBox.margin>
+                  <Insets left="830.0" />
+               </HBox.margin>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <left>
+      <VBox prefHeight="460.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="INFORMATION">
+               <VBox.margin>
+                  <Insets left="75.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="infotext" editable="false" prefHeight="420.0" prefWidth="300.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </TextArea>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="loggedInList" minWidth="400.0" prefHeight="520.0" prefWidth="400.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></ListView>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="selectName" onAction="#handleSelectName" prefHeight="40.0" prefWidth="300.0" promptText="Select Name" visibleRowCount="20">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </ComboBox>
+                  <Button fx:id="administrateButton" mnemonicParsing="false" onAction="#handleAdminButton" prefHeight="40.0" prefWidth="150.0" text="Administrate" visible="false">
+                     <HBox.margin>
+                        <Insets left="25.0" top="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ComboBox fx:id="selectPathogen" onAction="#handleSelectPathogen" prefHeight="40.0" prefWidth="200.0" promptText="Select Pathogen" visible="false">
+               <VBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ComboBox fx:id="selectLab" onAction="#handleSelectLaboratory" prefHeight="40.0" prefWidth="200.0" promptText="Select Laboratory" visible="false">
+               <VBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </VBox.margin>
+            </ComboBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="logIn" disable="true" mnemonicParsing="false" onAction="#handleLogIn" prefHeight="40.0" prefWidth="100.0" text="Log in">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <InnerShadow blurType="GAUSSIAN" />
+         </effect>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   <top>
+      <HBox prefHeight="101.0" prefWidth="1280.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../files/laboratory-sign.png" />
+               </image></ImageView>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="520.0" text="LABORATORY USER REGISTRATION">
+               <HBox.margin>
+                  <Insets left="75.0" top="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="PERSONS LOGGED IN">
+               <HBox.margin>
+                  <Insets left="90.0" top="40.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
