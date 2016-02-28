@@ -1,0 +1,6 @@
+August|Kobb|Diagnostics
+John|Doe|Virology
+Jonas|Jonsson|SAK
+Karl-Alfred|Karlsson|Virology
+Milan|Lund|SAK
+Tove|Jansson|Bacterology

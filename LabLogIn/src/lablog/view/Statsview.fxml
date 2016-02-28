@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lablog.view.StatisticsController">
+   <children>
+      <BorderPane maxHeight="680.0" maxWidth="1260.0">
+         <center>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="526.0" prefWidth="720.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="100.0" text="Statistics" textAlignment="CENTER">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <TableView fx:id="statsTable" maxWidth="700.0" prefHeight="466.0">
+                           <columns>
+                              <TableColumn fx:id="name" prefWidth="180.0" text="Name" />
+                              <TableColumn fx:id="pathogen" prefWidth="160.0" text="Pathogen" />
+                              <TableColumn fx:id="laboratory" prefWidth="84.0" text="Lab" />
+                              <TableColumn fx:id="logInDate" prefWidth="144.0" text="Log In" />
+                              <TableColumn fx:id="logOutDate" prefWidth="132.0" text="Log Out" />
+                           </columns>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+         <top>
+            <HBox prefWidth="1280.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../files/laboratory-sign.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="520.0" text="LABORATORY USE REGISTRATION">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="100.0" top="30.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1280.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#saveButton" prefHeight="40.0" prefWidth="100.0" text="Save">
+                     <HBox.margin>
+                        <Insets left="75.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleExit" prefHeight="40.0" prefWidth="100.0" text="EXIT">
+                     <HBox.margin>
+                        <Insets left="390.0" />
+                     </HBox.margin>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <left>
+            <VBox alignment="CENTER" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Set time period">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="datepicker1">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <DatePicker fx:id="datepicker2">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <Label text="Optional: Specify type">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="selectName" prefWidth="150.0" promptText="Name">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="selectPathogen" prefWidth="150.0" promptText="Pathogen">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="selectLab" prefWidth="150.0" promptText="Lab">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Button mnemonicParsing="false" onAction="#getStatistics" prefHeight="40.0" prefWidth="100.0" text="Get stats">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Button>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#clear" prefHeight="20.0" prefWidth="65.0" text="Clear">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="30.0" />
+                           </HBox.margin>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </Button>
+                     </children></HBox>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox alignment="CENTER" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextArea fx:id="display" maxHeight="300.0" maxWidth="260.0" prefHeight="300.0" prefWidth="220.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <CheckBox fx:id="lab5" mnemonicParsing="false" onAction="#handleCheckBox" text="Lab 5 Extra cost">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
